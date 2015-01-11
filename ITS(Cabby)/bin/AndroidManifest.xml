@@ -4,9 +4,9 @@
     android:versionCode="1"
     android:versionName="1.0" >
     
-    <permission
+    <!-- <permission
         android:name="com.sti.cabby.permission.MAPS_RECEIVE"
-        android:protectionLevel="signature" />
+        android:protectionLevel="signature" /> -->
     
     <uses-permission android:name="com.sti.cabby.permission.MAPS_RECEIVE" />
 
@@ -42,10 +42,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
-    
-    <meta-data
+        <!-- <activity android:name="com.sti.cabby.MainActivity"/>
+        <activity android:name="com.sti.cabby.parse.LoginSignupActivity" /> -->
+        
+        <meta-data
+   			 android:name="com.google.android.gms.version"
+   			 android:value="@integer/google_play_services_version" />
+        
+        <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyAIb3CmaCqj-zIT8PpsXlZLECBN2mO2j3E" />
+    </application>
 
 </manifest>

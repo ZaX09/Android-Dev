@@ -6,6 +6,18 @@
     <string name="hello_world">Hello world!</string>
     <string name="drawer_open">Slider Menu Opened</string>
     <string name="drawer_close">Slider Menu Closed</string>
+    <string name="Username">Username</string>
+    <string name="Password">Password</string>
+    <string name="LoginBtn">Login</string>
+    <string name="SignupBtn">Sign Up</string>
+    <string name="SignupBtn_customer">Sign Up as CUSTOMER</string>
+    <string name="SignupBtn_customernotice">Not a driver? Click to sign up as CUSTOMER</string>
+    <string name="SignupBtn_cab">Sign Up as DRIVER</string>
+    <string name="SignupBtn_cabnotice">Not a customer? Click to sign up as DRIVER</string>
+    <string name="ContBtn">Continue</string>
+    <string name="LogoutBtn">Logout</string>
+    <string name="Welcome">Welcome!</string>
+    <string name="clearMarkers">Clear Markers</string>
     
     <!-- Nav Drawer Menu Items -->
     <string-array name="nav_drawer_items">

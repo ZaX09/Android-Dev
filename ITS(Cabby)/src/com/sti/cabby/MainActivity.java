@@ -2,6 +2,7 @@ package com.sti.cabby;
 
 import java.util.ArrayList;
 
+import com.google.android.gms.maps.GoogleMap;
 import com.sti.cabby.adapter.NavDrawerListAdapter;
 import com.sti.cabby.model.NavDrawerItem;
 
@@ -37,6 +38,9 @@ public class MainActivity extends Activity {
 
 	private ArrayList<NavDrawerItem> navDrawerItems;
 	private NavDrawerListAdapter adapter;
+	
+	//map
+	View googleMap;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -124,6 +128,7 @@ public class MainActivity extends Activity {
 		}
 	}
 
+	//MENU
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.main, menu);
@@ -140,9 +145,16 @@ public class MainActivity extends Activity {
 		switch (item.getItemId()) {
 		case R.id.action_settings:
 			return true;
+		case R.id.clearMarkers:
+			clearMarkers();
+			return true;
 		default:
 			return super.onOptionsItemSelected(item);
 		}
+	}
+
+	private void clearMarkers() {
+		//clearing all markers in the map screen
 	}
 
 	/* *
