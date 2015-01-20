@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Cabby</string>
+    <!-- <string name="app_name">Cabby</string> -->
+    <string name="app_name">eyeTravel</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="drawer_open">Slider Menu Opened</string>
@@ -11,13 +12,15 @@
     <string name="LoginBtn">Login</string>
     <string name="SignupBtn">Sign Up</string>
     <string name="SignupBtn_customer">Sign Up as CUSTOMER</string>
-    <string name="SignupBtn_customernotice">Not a driver? Click to sign up as CUSTOMER</string>
+    <string name="SignupBtn_customernotice">Not a driver? Click me to sign up as CUSTOMER</string>
     <string name="SignupBtn_cab">Sign Up as DRIVER</string>
-    <string name="SignupBtn_cabnotice">Not a customer? Click to sign up as DRIVER</string>
+    <string name="SignupBtn_cabnotice">Not a customer? Click me to sign up as DRIVER</string>
     <string name="ContBtn">Continue</string>
     <string name="LogoutBtn">Logout</string>
     <string name="Welcome">Welcome!</string>
     <string name="clearMarkers">Clear Markers</string>
+    <string name="offline">Offline Mode</string>
+    <string name="debugUsername">Logcat user details</string>
     
     <!-- Nav Drawer Menu Items -->
     <string-array name="nav_drawer_items">

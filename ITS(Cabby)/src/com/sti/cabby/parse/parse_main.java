@@ -7,7 +7,7 @@ import com.parse.Parse;
 import com.parse.ParseACL;
 import com.parse.ParseAnonymousUtils;
 import com.parse.ParseUser;
-import com.sti.cabby.MainActivity;
+import com.sti.cabby.MainGUI;
  
 public class parse_main extends Activity {
  
@@ -30,7 +30,7 @@ public class parse_main extends Activity {
         if (ParseAnonymousUtils.isLinked(ParseUser.getCurrentUser())) {
             // If user is anonymous, send the user to LoginSignupActivity.class
             Intent intent = new Intent(parse_main.this,
-                    LoginSignupActivity.class);
+                    Login.class);
             startActivity(intent);
             finish();
         } else {
@@ -39,13 +39,13 @@ public class parse_main extends Activity {
             ParseUser currentUser = ParseUser.getCurrentUser();
             if (currentUser != null) {
                 // Send logged in users to Welcome.class
-                Intent intent = new Intent(parse_main.this, MainActivity.class);
+                Intent intent = new Intent(parse_main.this, MainGUI.class);
                 startActivity(intent);
                 finish();
             } else {
                 // Send user to LoginSignupActivity.class
                 Intent intent = new Intent(parse_main.this,
-                        LoginSignupActivity.class);
+                        Login.class);
                 startActivity(intent);
                 finish();
             }

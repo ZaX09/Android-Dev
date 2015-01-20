@@ -1,13 +1,22 @@
 package com.sti.cabby.parse;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.parse.ParseException;
+import com.parse.ParseUser;
+import com.parse.SignUpCallback;
+import com.sti.cabby.MainGUI;
 import com.sti.cabby.R;
  
 public class Signup extends Activity {
@@ -38,17 +47,82 @@ public class Signup extends Activity {
         // Sign up Button Click Listener
         signup.setOnClickListener(new OnClickListener() {
  
-            public void onClick(View arg0) {
-            	//enter signup codes for parse
+        	public void onClick(View arg0) {
+                // Retrieve the text entered from the EditText
+                usernametxt = username.getText().toString();
+                passwordtxt = password.getText().toString();
+                final ProgressDialog loading=new ProgressDialog(Signup.this);
+            	loading.setMessage("Logging in. Please wait. . .");
+            	loading.setIndeterminate(true);
+            	loading.show();
+ 
+                // Force user to fill up the form
+                if (usernametxt.equals("") && passwordtxt.equals("")) {
+                	loading.dismiss();
+                	AlertDialog.Builder loginPass=new AlertDialog.Builder(Signup.this);
+                    loginPass.setTitle("eyeTravel Sign up")
+                    	.setMessage("Please fill up username and password fields")
+                    	.setCancelable(false)
+                    	.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    			public void onClick(DialogInterface dialog, int id) {
+                    					dialog.cancel();
+                    			}
+                    	})
+                    	.create()
+                    	.show();
+ 
+                } else {
+                    // Save new user data into Parse.com Data Storage
+                	loading.dismiss();
+                    final ParseUser user = new ParseUser();
+                    user.setUsername(usernametxt);
+                    user.setPassword(passwordtxt);
+                    user.put("type", "customer");
+                    user.signUpInBackground(new SignUpCallback() {
+                        public void done(ParseException e) {
+                            if (e == null) {
+                                // Show a dialog message upon successful registration
+                            	AlertDialog.Builder loginPass=new AlertDialog.Builder(Signup.this);
+                                loginPass.setTitle("eyeTravel Sign up")
+                                	.setMessage("Sign up Successful! Please wait. . .")
+                                	.setCancelable(false)
+                                	.create()
+                                	.show();
+                                //logcat current user
+                                Log.i("sign up test","Username: "+user.getUsername().toString());
+                                Log.i("sign up test", "User type: "+user.get("type").toString());
+                                
+                                Intent signuplogin=new Intent(Signup.this,MainGUI.class);
+                                startActivity(signuplogin);
+                                finish();
+                            } else {
+                                //Toast.makeText(getApplicationContext(),"Sign up Error", Toast.LENGTH_LONG).show();
+                                AlertDialog.Builder loginPass=new AlertDialog.Builder(Signup.this);
+                                loginPass.setTitle("eyeTravel Sign up")
+                                	.setMessage("An error occurred. Please try again.")
+                                	.setCancelable(false)
+                                	.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                			public void onClick(DialogInterface dialog, int id) {
+                                					dialog.cancel();
+                                			}
+                                	})
+                                	.create()
+                                	.show();
+                            }
+                        }
+                    });
+                }
+ 
             }
         });
- 
-    }
     //redirect when link is clicked
-    public void driverSignup(View v)
-    {
-    	Intent intent=new Intent(this, signupDriver.class);
-    	startActivity(intent);
-    	finish();
-    }
+    link.setOnClickListener(new View.OnClickListener() {
+		@Override
+		public void onClick(View v) {
+			Intent intent = new Intent(Signup.this, signupDriver.class);
+            startActivity(intent);
+            finish();
+		}
+	});
+}
 }

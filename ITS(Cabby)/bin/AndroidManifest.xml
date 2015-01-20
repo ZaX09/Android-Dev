@@ -42,8 +42,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- <activity android:name="com.sti.cabby.MainActivity"/>
-        <activity android:name="com.sti.cabby.parse.LoginSignupActivity" /> -->
+        <activity android:name="com.sti.cabby.MainGUI"/>
+        <activity android:name="com.sti.cabby.parse.parse_main" />
+        <activity android:name="com.sti.cabby.parse.Login" />
+        <activity android:name="com.sti.cabby.parse.Signup" />
+        <activity android:name="com.sti.cabby.parse.signupDriver" />
         
         <meta-data
    			 android:name="com.google.android.gms.version"

@@ -42,14 +42,13 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
-        android:text="@string/SignupBtn_customer" />
+        android:text="@string/SignupBtn_cab" />
 
     <TextView
         android:id="@+id/txtLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
-        android:onClick="customerSignup"
         android:text="@string/SignupBtn_customernotice"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 </LinearLayout>

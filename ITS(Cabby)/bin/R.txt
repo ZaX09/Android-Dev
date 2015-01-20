@@ -117,7 +117,6 @@ int drawable list_item_bg_pressed 0x7f020029
 int drawable list_selector 0x7f02002a
 int drawable powered_by_google_dark 0x7f02002b
 int drawable powered_by_google_light 0x7f02002c
-int id RelativeLayout1 0x7f0c0025
 int id action_settings 0x7f0c0027
 int id adjust_height 0x7f0c0000
 int id adjust_width 0x7f0c0001
@@ -138,11 +137,13 @@ int id hybrid 0x7f0c0003
 int id icon 0x7f0c001a
 int id list_slidermenu 0x7f0c0019
 int id login 0x7f0c0023
+int id logout 0x7f0c0029
 int id mapView 0x7f0c001e
 int id match_parent 0x7f0c000e
 int id monochrome 0x7f0c0016
 int id none 0x7f0c0002
 int id normal 0x7f0c0004
+int id offline 0x7f0c0025
 int id password 0x7f0c0022
 int id production 0x7f0c0009
 int id sandbox 0x7f0c000a
@@ -217,11 +218,13 @@ int string common_signin_button_text 0x7f06001f
 int string common_signin_button_text_long 0x7f060020
 int string create_calendar_message 0x7f060005
 int string create_calendar_title 0x7f060004
+int string debugUsername 0x7f060035
 int string decline 0x7f060003
-int string desc_list_item_icon 0x7f060034
+int string desc_list_item_icon 0x7f060036
 int string drawer_close 0x7f060027
 int string drawer_open 0x7f060026
 int string hello_world 0x7f060025
+int string offline 0x7f060034
 int string store_picture_message 0x7f060001
 int string store_picture_title 0x7f060000
 int string wallet_buy_button_place_holder 0x7f060022
