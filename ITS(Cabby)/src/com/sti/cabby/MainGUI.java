@@ -79,9 +79,13 @@ public class MainGUI extends Activity {
 		// Communities, Will add a counter here
 		navDrawerItems.add(new NavDrawerItem(navMenuTitles[3], navMenuIcons.getResourceId(3, -1)));
 		// Pages
-		navDrawerItems.add(new NavDrawerItem(navMenuTitles[4], navMenuIcons.getResourceId(4, -1)));
+		/*navDrawerItems.add(new NavDrawerItem(navMenuTitles[4], navMenuIcons.getResourceId(4, -1)));
 		// What's hot, We  will add a counter here
-		navDrawerItems.add(new NavDrawerItem(navMenuTitles[5], navMenuIcons.getResourceId(5, -1)));
+		navDrawerItems.add(new NavDrawerItem(navMenuTitles[5], navMenuIcons.getResourceId(5, -1)));*/
+		/*for(int x=0;x<4;x++)
+		{
+			navDrawerItems.add(new NavDrawerItem(navMenuTitles[x], navMenuIcons.getResourceId(x, -1)));
+		}*/
 		
 
 		// Recycle the typed array
@@ -200,16 +204,16 @@ public class MainGUI extends Activity {
 		case 1:
 			fragment = new ProfileFragment();
 			break;
-		case 2:
+		/*case 2:
 			fragment = new TrustedContactsFragment();
 			break;
 		case 3:
 			fragment = new HistoryFragment();
-			break;
-		case 4:
+			break;*/
+		case 2:
 			fragment = new AboutFragment();
 			break;
-		case 5:
+		case 3:
 			//fragment = new LogoutFragment();
 			ParseUser.logOut();
 			Intent logout=new Intent(this,parse_main.class);
@@ -234,7 +238,7 @@ public class MainGUI extends Activity {
 			mDrawerLayout.closeDrawer(mDrawerList);
 		} else {
 			// error in creating fragment
-			Log.e("MainActivity", "Error in creating fragment");
+			Log.e("MainGUI", "Error in creating fragment");
 		}
 	}
 

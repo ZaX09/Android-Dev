@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.parse.LogInCallback;
 import com.parse.ParseException;
@@ -55,6 +56,7 @@ public class Login extends Activity {
                             public void done(ParseUser user, ParseException e) {
                                 if (user != null) {
                                     // If user exist and authenticated, send user to Welcome.class
+                                	//TO-DO add condition for checking user type
                                     Intent intent = new Intent(Login.this, MainGUI.class);
                                     loading.dismiss();
                                     startActivity(intent);
@@ -101,6 +103,7 @@ public class Login extends Activity {
 				Intent intent = new Intent(Login.this, MainGUI.class);
                 startActivity(intent);
                 finish();
+                Toast.makeText(getApplicationContext(), "Offline mode ACTIVATED!", Toast.LENGTH_LONG);
 			}
 		});
  
