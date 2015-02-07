@@ -18,9 +18,12 @@
     <string name="ContBtn">Continue</string>
     <string name="LogoutBtn">Logout</string>
     <string name="Welcome">Welcome!</string>
-    <string name="clearMarkers">Clear Markers</string>
+    <string name="setDestination">Set Destination</string>
     <string name="offline">Offline Mode</string>
     <string name="debugUsername">Logcat user details</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="load_directions">Route</string>
     
     <!-- Nav Drawer Menu Items -->
     <string-array name="nav_drawer_items">

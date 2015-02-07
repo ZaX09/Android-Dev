@@ -13,6 +13,7 @@ import com.sti.cabby.model.NavDrawerItem;
 import com.sti.cabby.parse.parse_main;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Intent;
@@ -25,7 +26,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -125,6 +128,9 @@ public class MainGUI extends Activity {
 			// on first time display view for first nav item
 			displayView(0);
 		}
+		//input directions dialogFragment
+		
+		
 	}
 
 	/**
@@ -157,8 +163,8 @@ public class MainGUI extends Activity {
 		switch (item.getItemId()) {
 		case R.id.action_settings:
 			return true;
-		case R.id.clearMarkers:
-			clearMarkers();
+		case R.id.setDestination:
+			Set_Destination();
 			return true;
 		case R.id.logout:
 			logoutP();
@@ -176,8 +182,23 @@ public class MainGUI extends Activity {
 		finish();
 	}
 
-	private void clearMarkers() {
-		
+	private void Set_Destination() {
+		Intent intent=new Intent(this, autocomplete.class);
+		startActivity(intent);
+		//finish();
+		/*final Dialog dialog = new Dialog(this);
+		dialog.setContentView(R.layout.directions_input);
+		dialog.setTitle("Set Destination");
+		autocomplete txtAC=new autocomplete();
+		Button loadDirections=(Button) dialog.findViewById(R.id.load_directions);
+		loadDirections.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				//route
+				dialog.dismiss();
+			}
+		});
+		dialog.show();*/
 	}
 
 	/* *
